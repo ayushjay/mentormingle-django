@@ -1,0 +1,6 @@
+<h1>Post List</h1>
+<ul>
+    {% for post in object_list %}
+       <a href="{%  url 'crud:post_detail' post.pk %}"> <li>{{ post.title }}</li></a>
+    {% endfor %}
+</ul>

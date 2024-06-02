@@ -1,0 +1,17 @@
+<h1>Current request.path is {{ request.path }} </h1>
+
+{% if user.is_authenticated %}
+<p>Authenticated as</p>
+<pre>
+    Name: {{ user.get_full_name }}
+    email: {{ user.email }}
+    ID: {{ user.id }}
+</pre>
+<p>You can <a href="{% url 'logout'  %}?next={% url 'post_home' %}">Logout here</a></p>
+{% else %}
+<p>you are not logged in</p>
+<p> You can <a href="{% url 'login' %}?next={{ request.path }}">Login here.</a></p>
+
+{% endif %}
+
+
