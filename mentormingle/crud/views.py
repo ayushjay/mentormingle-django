@@ -9,6 +9,16 @@ from django.views.generic import (
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Post
 from django.urls import reverse, reverse_lazy
+from .forms import PostForm
+
+""" 
+def login(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(request, username=username, password=password)
+
+ """
 
 
 class HomeListView(LoginRequiredMixin, ListView):
@@ -19,9 +29,16 @@ class HomeDetailView(LoginRequiredMixin, DetailView):
     model = Post
 
 
+class HomeCreateView(LoginRequiredMixin, CreateView):
+    model = Post
+    form_class = PostForm
+    success_url = reverse_lazy("crud:post_home")
+
+
 class HomeUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
     fields = ["title", "content"]
+    template_name = "crud/post_update.html"
     success_url = reverse_lazy("crud:post_home")
 
 

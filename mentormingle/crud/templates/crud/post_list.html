@@ -3,4 +3,5 @@
     {% for post in object_list %}
        <a href="{%  url 'crud:post_detail' post.pk %}"> <li>{{ post.title }}</li></a>
     {% endfor %}
+    <a href="{% url 'crud:post_create' %}"><h4>+Create a new post</h4></a>
 </ul>
