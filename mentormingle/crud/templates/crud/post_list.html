@@ -1,3 +1,8 @@
+{% extends "crud/main.html" %}
+
+
+
+{% block content %}
 <h1>Post List</h1>
 <ul>
     {% for post in object_list %}
@@ -5,3 +10,5 @@
     {% endfor %}
     <a href="{% url 'crud:post_create' %}"><h4>+Create a new post</h4></a>
 </ul>
+
+{% endblock %}

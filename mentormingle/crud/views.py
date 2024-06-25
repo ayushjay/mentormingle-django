@@ -10,7 +10,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Post
 from django.urls import reverse, reverse_lazy
 from .forms import PostForm
+import logging
 
+logger = logging.getLogger(__name__)
 """ 
 def login(request):
     if request.method == "POST":

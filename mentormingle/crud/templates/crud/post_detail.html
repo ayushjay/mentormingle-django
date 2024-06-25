@@ -1,4 +1,6 @@
+{% extends "crud/main.html" %}
 
+{% block content %}
     <title>{{ post.title }}</title>
 </head>
 <body>
@@ -10,3 +12,6 @@
 <a href="{% url 'crud:post_update' post.pk %}">Update</a>
 <br>
 <a style="color:red" href="{% url 'crud:post_delete' post.pk%}">Delete!</a>
+
+
+{% endblock %}

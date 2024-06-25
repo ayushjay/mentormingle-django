@@ -1,6 +1,42 @@
-<h1>Update Post</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Update</button>
-</form>
+{% extends "crud/main.html" %}
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update your post</title>
+ 
+</head>
+<body>
+    <table>
+      
+    {{  form.as_table }}
+</table>
+<input type="Submit" value="Submit">
+<input type="submit" onclick="window.location='{% url 'crud:post_home'  %}' ;return false;" value="Cancel">
+</body>
+</html>
+-->
+
+<!-- your_app/templates/your_app/yourmodel_form.html -->
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update YourModel</title>
+</head>
+<body>
+    <h1>Update YourModel</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+      
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
+
+{% endblock %}
