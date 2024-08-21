@@ -1,6 +1,7 @@
 {% extends "crud/main.html" %}
 
 {% block content %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +12,7 @@
     <h1>Create a New Post</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy}}
         <button type="submit">Save</button>
     </form>
 </body>

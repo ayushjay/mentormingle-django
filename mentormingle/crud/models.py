@@ -1,5 +1,7 @@
 from django.db import models
 from taggit.managers import TaggableManager
+from django.conf import settings
+from django.contrib.auth.models import User
 
 
 class Mentor(models.Model):
@@ -16,6 +18,11 @@ class Mentor(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField(max_length=300)
+    owner = models.ForeignKey(
+        Mentor,
+        on_delete=models.CASCADE,
+        related_name="owned_posts",
+    )
     author = models.ForeignKey(Mentor, on_delete=models.CASCADE)
 
     def __str__(self):

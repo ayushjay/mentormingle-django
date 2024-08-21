@@ -1,3 +1,4 @@
 vm/
 gitignore
 .vscode/
+db.sqlite3
