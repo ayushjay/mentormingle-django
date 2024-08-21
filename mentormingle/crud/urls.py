@@ -17,5 +17,5 @@ urlpatterns = [
     path("post/update/<int:pk>", HomeUpdateView.as_view(), name="post_update"),
     path("post/delete/<int:pk>", HomeDeleteView.as_view(), name="post_delete"),
     path("login/", LoginView.as_view(), name="login"),
-    path("logout/", LogoutView.as_view(), name="logout"),
+    path("logout/", LogoutView.as_view(next_page="login"), name="logout"),
 ]

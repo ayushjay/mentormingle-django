@@ -13,7 +13,7 @@
     email: {{ user.email }}
     ID: {{ user.id }}
 </pre>
-<p>You can <a href="{% url 'logout'  %}?next={% url 'login' %}">Logout here</a></p>
+<p>You can <a href="{% url 'logout'  %}">Logout here</a></p>
 {% else %}
 <p>you are not logged in</p>
 <p> You can <a href="{% url 'login' %}?next={{ request.path }}">Login here.</a></p>
